@@ -53,11 +53,12 @@
     <UnityVersion>2020.3.14f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
     <Compile Include="Assets\Scripts\Eagle.cs" />
     <Compile Include="Assets\Scripts\MapCreator.cs" />
     <Compile Include="Assets\Scripts\CameraFix.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
+    <Compile Include="Assets\Scripts\PlatformHiding.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

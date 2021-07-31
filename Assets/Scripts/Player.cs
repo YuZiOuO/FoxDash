@@ -18,10 +18,15 @@ public class Player : MonoBehaviour
      * 1 = 进行中
      * 2 = 结束 */
     public int gameStatus = 0;
+    /*玩家状态标识
+     * 0 = 正常
+     * 1 = 跳跃中 */
+    public int playerStatus = 0;
 
     void Start()
     {
         anim.SetBool("IsIdling", true);
+        playerStatus = 0;
     }
 
     void Update()
@@ -33,6 +38,10 @@ public class Player : MonoBehaviour
             {
                 Jump();
             }
+        }
+        if(playerStatus == 1 && rb.velocity.y <= 0)
+        {
+            playerStatus = 0;
         }
     }
     void FixedUpdate()
@@ -91,7 +100,7 @@ public class Player : MonoBehaviour
     {
         gameStatus = 1;
         triggercoll.GetComponent<Transform>();
-        if (tf.position.y > triggercoll.transform.position.y)
+        if ((tf.position.y > triggercoll.transform.position.y) && playerStatus == 0)
         {
             if (triggercoll.tag == "PlatformDefault")
             {
@@ -111,11 +120,18 @@ public class Player : MonoBehaviour
             if (triggercoll.tag == "PlatformCheery")
             {
                 rb.velocity = new Vector2(rb.velocity.x, cheeryFlyingTime);
+                anim.SetBool("IsJumping", true);
+                anim.SetBool("IsFalling", false);
+                anim.SetBool("IsIdling", false);
             }
             if (triggercoll.tag == "PlatformGem")
             {
                 rb.velocity = new Vector2(rb.velocity.x, gemFlyingTime);
+                anim.SetBool("IsJumping", true);
+                anim.SetBool("IsFalling", false);
+                anim.SetBool("IsIdling", false);
             }
+            playerStatus = 1;
         }
     }
 }

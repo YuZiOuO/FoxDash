@@ -1219,6 +1219,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 433036357673009122, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
   m_PrefabInstance: {fileID: 433036356564498286}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876317972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876317967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613ef3e765fb9c145b53cad5747bfc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  hidingEnterTime: 5
+  hidingTime: 5
+  transitTime: 1
+  status: 0
+  sprenderer: {fileID: 0}
 --- !u!1 &1889065918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1394,7 @@ MonoBehaviour:
   cheeryFlyingTime: 20
   gemFlyingTime: 50
   gameStatus: 0
+  playerStatus: 0
 --- !u!95 &1889065924
 Animator:
   serializedVersion: 3
@@ -1407,6 +1426,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 433036357673009120, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 433036357673009121, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1417,7 +1440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433036357673009121, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.67
+      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 433036357673009121, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1479,6 +1502,10 @@ PrefabInstance:
       propertyPath: playertf
       value: 
       objectReference: {fileID: 1889065921}
+    - target: {fileID: 2327012080899771557, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
+      propertyPath: platformDistanceLimit
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de1b9593ea8043f4aaecc488efe82f51, type: 3}
 --- !u!1001 &3099443125488351977

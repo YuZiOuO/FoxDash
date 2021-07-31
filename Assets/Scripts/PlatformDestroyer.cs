@@ -6,6 +6,7 @@ public class PlatformDestroyer : MonoBehaviour
 {
     public Transform tf;
     public GameObject player;
+    public float platformDistanceLimit;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlatformDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.y - tf.position.y >= 10)
+        if(player.transform.position.y - tf.position.y >= platformDistanceLimit)
         {
             Destroy(tf.gameObject);
         }
